@@ -13,38 +13,38 @@ Color Presets, `t_Co=256`, and **no** Vim plugins
 
 ### HTML
 
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/html-256-light.png)
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/html-256-dark.png)
+![](https://cl.ly/kI2q/html-256-light.png)
+![](https://cl.ly/kHYH/html-256-dark.png)
 
 
 ### JavaScript
 
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/javascript-256-light.png)
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/javascript-256-dark.png)
+![](https://cl.ly/kII4/javascript-256-light.png)
+![](https://cl.ly/kHSH/javascript-256-dark.png)
 
 
 ### Java
 
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/java-256-light.png)
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/java-256-dark.png)
+![](https://cl.ly/kHpx/java-256-light.png)
+![](https://cl.ly/kHZD/java-256-dark.png)
 
 
 ### PHP
 
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/php-256-light.png)
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/php-256-dark.png)
+![](https://cl.ly/kHyl/php-256-light.png)
+![](https://cl.ly/kHBp/php-256-dark.png)
 
 
 ### Python
 
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/python-256-light.png)
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/python-256-dark.png)
+![](https://cl.ly/kHo7/python-256-light.png)
+![](https://cl.ly/kHdF/python-256-dark.png)
 
 
 ### Ruby
 
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/ruby-256-light.png)
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/ruby-256-dark.png)
+![](https://cl.ly/kHEP/ruby-256-light.png)
+![](https://cl.ly/kHp6/ruby-256-dark.png)
 
 ## 16 Colors
 
@@ -55,35 +55,35 @@ Color Presets, `t_Co=16`, and **no** Vim plugins
 
 ### HTML
 
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/html-16-light.png)
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/html-16-dark.png)
+![](https://cl.ly/kHmJ/html-16-light.png)
+![](https://cl.ly/kHeD/html-16-dark.png)
 
 
 ### JavaScript
 
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/javascript-16-light.png)
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/javascript-16-dark.png)
+![](https://cl.ly/kHbi/javascript-16-light.png)
+![](https://cl.ly/kI4D/javascript-16-dark.png)
 
 
 ### Java
 
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/java-16-light.png)
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/java-16-dark.png)
+![](https://cl.ly/kHqq/java-16-light.png)
+![](https://cl.ly/kHAU/java-16-dark.png)
 
 
 ### PHP
 
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/php-16-light.png)
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/php-16-dark.png)
+![](https://cl.ly/kI1A/php-16-light.png)
+![](https://cl.ly/kILA/php-16-dark.png)
 
 
 ### Python
 
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/python-16-light.png)
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/python-16-dark.png)
+![](https://cl.ly/kHR1/python-16-light.png)
+![](https://cl.ly/kI6L/python-16-dark.png)
 
 
 ### Ruby
 
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/ruby-16-light.png)
-![](https://github.com/jsit/disco.vim/raw/master/screenshots/ruby-16-dark.png)
+![](https://cl.ly/kI5g/ruby-16-light.png)
+![](https://cl.ly/kHnD/ruby-16-dark.png)
