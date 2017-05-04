@@ -8,8 +8,20 @@ Codebase derived from jsit/vim-tomorrow/theme (which was derived from chriskemps
 
 ## 256 Colors
 
-These screenshots are using iTerm2 with the pre-installed Tango (Light/Dark)
-Color Presets, `t_Co=256`, and **no** Vim plugins
+### Monokai
+![](https://cl.ly/kJ6j/disco-monokai.png)
+
+
+### Base16
+![](https://cl.ly/kInn/disco-base16.png)
+
+
+### Solarized
+![](https://cl.ly/kJ6K/disco-solarized.png)
+
+
+The following screenshots are using iTerm2 with the pre-installed Tango
+(Light/Dark) Color Presets, `t_Co=256`, and **no** Vim plugins
 
 ### HTML
 
