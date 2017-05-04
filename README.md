@@ -12,12 +12,23 @@ Codebase derived from jsit/vim-tomorrow/theme (which was derived from chriskemps
 ![](https://cl.ly/kJ6j/disco-monokai.png)
 
 
-### Base16
+### Base16 Railscasts Light
+![](https://cl.ly/kIjt/disco-base16-railscasts-light.png)
+
+
+### Base16 Railscasts Dark
+![](https://cl.ly/kJ9E/disco-base16-railscasts-dark.png)
+
+
+### Base16 Tomorrow
 ![](https://cl.ly/kInn/disco-base16.png)
 
 
 ### Solarized
 ![](https://cl.ly/kJ6K/disco-solarized.png)
+
+
+---
 
 
 The following screenshots are using iTerm2 with the pre-installed Tango
