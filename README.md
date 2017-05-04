@@ -2,7 +2,7 @@
 
 A full set of 1-, 8-, 16-, 88-, 256-, and GUI-color-compatible Vim colors. Aims to be bulletproof and obey terminal palette options and `background` setting if present.
 
-Codebase derived from jsit/vim-tomorrow/theme (which was derived from chriskempson/vim-tomorrow-theme)
+Codebase derived from jsit/vim-tomorrow-theme (which was derived from chriskempson/vim-tomorrow-theme)
 
 # Screenshots
 
