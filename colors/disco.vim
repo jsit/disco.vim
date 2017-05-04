@@ -46,38 +46,44 @@ let colors_name = "disco"
 
 
 " Define our colors based on the background setting {{{
-if (&background == "dark")
-	let s:dim      = [8  , 'DarkGray']
-	let s:dimtwo   = [7  , 'LightGray']
-	let s:bg       = [0  , 'Black']
-	let s:fg       = [15 , 'White']
-	let s:blue     = [12 , 'Blue']
-	let s:yellow   = [11 , 'Yellow']
-	let s:red      = [9  , 'Red']
-	let s:green    = [10 , 'Green']
-	let s:cyan     = [14 , 'Cyan']
-	let s:magenta  = [13 , 'Magenta']
-	let s:dimred   = [1  , 'DarkRed']
-	let s:dimgreen = [2  , 'DarkGreen']
-	let s:dimcyan  = [6  , 'DarkCyan']
+if &background == "dark" && (!exists('g:disco_nobright') || g:disco_nobright != 1)
+	let s:dim          = [8  , 'DarkGray']
+	let s:dimtwo       = [7  , 'LightGray']
+	let s:bg           = [0  , 'Black']
+	let s:fg           = [15 , 'White']
+	let s:blue         = [12 , 'Blue']
+	let s:yellow       = [11 , 'Yellow']
+	let s:red          = [9  , 'Red']
+	let s:green        = [10 , 'Green']
+	let s:cyan         = [14 , 'Cyan']
+	let s:magenta      = [13 , 'Magenta']
+	let s:dimred       = [1  , 'DarkRed']
+	let s:dimgreen     = [2  , 'DarkGreen']
+	let s:dimcyan      = [6  , 'DarkCyan']
+  let s:brightyellow = [11 , 'Yellow']
 else
-	let s:dim      = [7  , 'LightGray']
-	let s:dimtwo   = [8  , 'DarkGray']
-	let s:bg       = [15 , 'White']
-	let s:fg       = [0  , 'Black']
-	let s:blue     = [4  , 'DarkBlue']
-	let s:yellow   = [3  , 'DarkYellow']
-	let s:red      = [1  , 'DarkRed']
-	let s:green    = [2  , 'DarkGreen']
-	let s:cyan     = [6  , 'DarkCyan']
-	let s:magenta  = [5  , 'DarkMagenta']
-	let s:dimred   = [9  , 'Red']
-	let s:dimgreen = [10 , 'Green']
-	let s:dimcyan  = [14 , 'Cyan']
+	let s:dim          = [7  , 'LightGray']
+	let s:dimtwo       = [8  , 'DarkGray']
+	let s:bg           = [15 , 'White']
+	let s:fg           = [0  , 'Black']
+	let s:blue         = [4  , 'DarkBlue']
+	let s:yellow       = [3  , 'DarkYellow']
+	let s:red          = [1  , 'DarkRed']
+	let s:green        = [2  , 'DarkGreen']
+	let s:cyan         = [6  , 'DarkCyan']
+	let s:magenta      = [5  , 'DarkMagenta']
+  if !exists('g:disco_nobright') || g:disco_nobright != 1
+    let s:dimred       = [9  , 'Red']
+    let s:dimgreen     = [10 , 'Green']
+    let s:dimcyan      = [14 , 'Cyan']
+    let s:brightyellow = [11 , 'Yellow']
+  else
+    let s:dimred       = [1  , 'DarkRed']
+    let s:dimgreen     = [2  , 'DarkGreen']
+    let s:dimcyan      = [6  , 'DarkCyan']
+    let s:brightyellow = [3  , 'DarkYellow']
+  endif
 endif
-
-let s:brightyellow = [11, '#fdeb61']
-
 " }}}
 
 
