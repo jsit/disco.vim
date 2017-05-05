@@ -29,6 +29,10 @@ Color Presets, `t_Co=256`, and **no** Vim plugins
 ![](https://cl.ly/kJ6K/disco-solarized.png)
 
 
+### Jellybeans
+![](https://cl.ly/kKtx/disco-jellybeans.png)
+
+
 ### Tango Light
 ![](https://cl.ly/kIZd/disco-tango-light.png)
 
