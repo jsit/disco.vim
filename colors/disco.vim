@@ -43,10 +43,17 @@ endif
 
 let colors_name = "disco"
 
+" Check to see if we can do colors 8-15
+if &t_Co > 8 && (!exists('g:disco_nobright') || g:disco_nobright != 1)
+  let s:gt_eight = 1
+else
+  let s:gt_eight = 0
+endif
+
 
 
 " Define our colors based on the background setting {{{
-if &background == "dark" && (!exists('g:disco_nobright') || g:disco_nobright != 1)
+if &background == "dark" && s:gt_eight
 	let s:dim          = [8  , 'DarkGray']
 	let s:dimtwo       = [7  , 'LightGray']
 	let s:bg           = [0  , 'Black']
@@ -62,9 +69,6 @@ if &background == "dark" && (!exists('g:disco_nobright') || g:disco_nobright != 
 	let s:dimcyan      = [6  , 'DarkCyan']
   let s:brightyellow = [11 , 'Yellow']
 else
-	let s:dim          = [7  , 'LightGray']
-	let s:dimtwo       = [8  , 'DarkGray']
-	let s:bg           = [15 , 'White']
 	let s:fg           = [0  , 'Black']
 	let s:blue         = [4  , 'DarkBlue']
 	let s:yellow       = [3  , 'DarkYellow']
@@ -72,16 +76,22 @@ else
 	let s:green        = [2  , 'DarkGreen']
 	let s:cyan         = [6  , 'DarkCyan']
 	let s:magenta      = [5  , 'DarkMagenta']
-  if !exists('g:disco_nobright') || g:disco_nobright != 1
+  if s:gt_eight
+    let s:dim          = [7  , 'LightGray']
+    let s:dimtwo       = [8  , 'DarkGray']
+    let s:bg           = ['NONE' , 'NONE']
     let s:dimred       = [9  , 'Red']
     let s:dimgreen     = [10 , 'Green']
     let s:dimcyan      = [14 , 'Cyan']
     let s:brightyellow = [11 , 'Yellow']
   else
-    let s:dimred       = [1  , 'DarkRed']
-    let s:dimgreen     = [2  , 'DarkGreen']
-    let s:dimcyan      = [6  , 'DarkCyan']
-    let s:brightyellow = [3  , 'DarkYellow']
+    let s:dim          = [7  , 'LightGray']
+    let s:dimtwo       = [7  , 'LightGray']
+    let s:bg           = ['NONE'  , 'NONE']
+    let s:dimred       = s:red
+    let s:dimgreen     = s:green
+    let s:dimcyan      = s:cyan
+    let s:brightyellow = s:yellow
   endif
 endif
 " }}}
@@ -95,7 +105,13 @@ call <SID>set_colors("Conceal"      , "NONE"         , "NONE"         , "")
 call <SID>set_colors("Cursor"       , "NONE"         , "NONE"         , "reverse")
 call <SID>set_colors("CursorIM"     , "NONE"         , "NONE"         , "")
 call <SID>set_colors("CursorColumn" , s:fg           , "NONE"         , "")
-call <SID>set_colors("CursorLine"   , "NONE"         , s:dim          , "")
+
+if s:dimtwo != s:dim " Needs to be different from Comment
+  call <SID>set_colors("CursorLine"   , "NONE"         , s:dim          , "")
+else
+  call <SID>set_colors("CursorLine"   , "NONE"         , "NONE"          , "")
+endif
+
 call <SID>set_colors("CursorLineNr" , "NONE"         , s:dim          , "")
 call <SID>set_colors("Directory"    , s:blue         , "NONE"         , "")
 call <SID>set_colors("DiffAdd"      , ""             , s:dimgreen     , "")
@@ -104,23 +120,44 @@ call <SID>set_colors("DiffDelete"   , s:red          , s:dimred       , "")
 call <SID>set_colors("DiffText"     , "white"        , s:magenta      , "")
 hi link EndOfBuffer NonText
 call <SID>set_colors("ErrorMsg"     , "white"        , s:red    , "")
-call <SID>set_colors("VertSplit"    , s:dimtwo       , s:dimtwo , "NONE")
-call <SID>set_colors("Folded"       , s:dimtwo       , s:dim    , "")
-call <SID>set_colors("FoldColumn"   , s:dimtwo       , s:dim    , "")
-call <SID>set_colors("SignColumn"   , s:dimtwo       , s:dim    , "")
+
+if s:dimtwo != s:dim " Needs to be different from SignColumn
+  call <SID>set_colors("VertSplit"    , s:dimtwo       , s:dimtwo , "NONE")
+else
+  call <SID>set_colors("VertSplit"    , s:fg       , s:fg , "reverse")
+endif
+
+if s:dimtwo != s:dim
+  call <SID>set_colors("Folded"       , s:dimtwo       , s:dim    , "")
+  call <SID>set_colors("FoldColumn"   , s:dimtwo       , s:dim    , "")
+  call <SID>set_colors("SignColumn"   , s:dimtwo       , s:dim    , "")
+else
+  call <SID>set_colors("Folded"       , "NONE"      , s:dimtwo    , "")
+  call <SID>set_colors("FoldColumn"   , "NONE"      , s:dimtwo    , "")
+  call <SID>set_colors("SignColumn"   , "NONE"      , s:dimtwo    , "")
+endif
+
 call <SID>set_colors("IncSearch"    , s:brightyellow , "black"  , "reverse")
 call <SID>set_colors("LineNr"       , s:dim          , "NONE"   , "")
 call <SID>set_colors("MatchParen"   , s:yellow       , "NONE"   , "")
 call <SID>set_colors("ModeMsg"      , s:green        , "NONE"   , "")
 call <SID>set_colors("MoreMsg"      , s:green        , "NONE"   , "")
 call <SID>set_colors("NonText"      , s:dim          , "NONE"   , "")
+
 if &background == "dark" && has('gui')
   call <SID>set_colors("Normal"     , "white"        , "black"        , "")
 else
   call <SID>set_colors("Normal"     , ""             , ""             , "NONE")
 endif
+
 call <SID>set_colors("PMenu"        , s:fg           , s:dim          , "")
-call <SID>set_colors("PMenuSel"     , s:dim          , s:dimtwo       , "")
+
+if s:dimtwo != s:dim
+  call <SID>set_colors("PMenuSel"     , s:dim          , s:dimtwo       , "")
+else
+  call <SID>set_colors("PMenuSel"     , s:dim          , ""       , "")
+endif
+
 call <SID>set_colors("PMenuSbar"    , s:fg           , s:dim          , "")
 call <SID>set_colors("PMenuThumb"   , s:fg           , s:dim          , "")
 call <SID>set_colors("Question"     , s:green        , "NONE"         , "")
@@ -131,7 +168,13 @@ call <SID>set_colors("SpellCap"     , s:red          , "NONE"         , "")
 call <SID>set_colors("SpellLocal"   , s:red          , "NONE"         , "")
 call <SID>set_colors("SpellRare"    , s:bg           , s:dimred       , "")
 call <SID>set_colors("StatusLine"   , ""             , ""             , "reverse")
-call <SID>set_colors("StatusLineNC" , s:dimtwo       , s:dim          , "")
+
+if s:dimtwo != s:dim
+  call <SID>set_colors("StatusLineNC" , s:dimtwo       , ""          , "")
+else
+  call <SID>set_colors("StatusLineNC" , s:dimtwo       , ""          , "")
+endif
+
 call <SID>set_colors("TabLine"      , s:fg           , s:dim          , "NONE")
 call <SID>set_colors("TabLineFill"  , s:fg           , "lightgray"    , "")
 call <SID>set_colors("TabLineSel"   , "NONE"         , "NONE"         , "")
