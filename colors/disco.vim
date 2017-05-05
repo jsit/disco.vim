@@ -44,7 +44,7 @@ endif
 let colors_name = "disco"
 
 " Check to see if we can do colors 8-15
-if &t_Co > 8 && (!exists('g:disco_nobright') || g:disco_nobright != 1)
+if has('gui_running') || (&t_Co > 8 && (!exists('g:disco_nobright') || g:disco_nobright != 1))
 	let s:gt_eight = 1
 else
 	let s:gt_eight = 0
@@ -144,7 +144,7 @@ call <SID>set_colors("ModeMsg"      , s:green        , "NONE"   , "")
 call <SID>set_colors("MoreMsg"      , s:green        , "NONE"   , "")
 call <SID>set_colors("NonText"      , s:dim          , "NONE"   , "")
 
-if &background == "dark" && has('gui')
+if &background == "dark" && has('gui_running')
 	call <SID>set_colors("Normal"     , "white"        , "black"        , "")
 else
 	call <SID>set_colors("Normal"     , ""             , ""             , "NONE")
