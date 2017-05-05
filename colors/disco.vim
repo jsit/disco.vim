@@ -155,7 +155,7 @@ call <SID>set_colors("PMenu"        , s:fg           , s:dim          , "")
 if s:dimtwo != s:dim
   call <SID>set_colors("PMenuSel"     , s:dim          , s:dimtwo       , "")
 else
-  call <SID>set_colors("PMenuSel"     , s:dim          , ""       , "")
+  call <SID>set_colors("PMenuSel"     , s:dim          , s:fg       , "")
 endif
 
 call <SID>set_colors("PMenuSbar"    , s:fg           , s:dim          , "")
