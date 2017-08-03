@@ -100,17 +100,19 @@ endif
 
 " Highlight Groups (:h highlight-groups) {{{
 
-call <SID>set_colors("ColorColumn"  , s:fg           , "NONE"         , "")
+if s:dimtwo != s:dim " Needs to be different from Comment
+	call <SID>set_colors("ColorColumn"  , "NONE"         , s:dim          , "")
+	call <SID>set_colors("CursorColumn" , "NONE"         , s:dim          , "")
+	call <SID>set_colors("CursorLine"   , "NONE"         , s:dim          , "")
+else
+	call <SID>set_colors("ColorColumn"  , "NONE"         , "NONE"         , "")
+	call <SID>set_colors("CursorColumn" , "NONE"         , "NONE"         , "")
+	call <SID>set_colors("CursorLine"   , "NONE"         , "NONE"         , "")
+endif
+
 call <SID>set_colors("Conceal"      , "NONE"         , "NONE"         , "")
 call <SID>set_colors("Cursor"       , "NONE"         , "NONE"         , "reverse")
 call <SID>set_colors("CursorIM"     , "NONE"         , "NONE"         , "")
-call <SID>set_colors("CursorColumn" , s:fg           , "NONE"         , "")
-
-if s:dimtwo != s:dim " Needs to be different from Comment
-	call <SID>set_colors("CursorLine"   , "NONE"         , s:dim          , "")
-else
-	call <SID>set_colors("CursorLine"   , "NONE"         , "NONE"          , "")
-endif
 
 call <SID>set_colors("CursorLineNr" , "NONE"         , s:dim          , "")
 call <SID>set_colors("Directory"    , s:blue         , "NONE"         , "")
