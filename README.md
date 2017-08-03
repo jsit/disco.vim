@@ -39,3 +39,8 @@ Color Presets, `t_Co=256`, and **no** Vim plugins
 
 ### Tango Dark
 ![](https://cl.ly/kIa8/disco-tango-dark.png)
+
+
+# License
+
+Copyright (c) Jay Sitter. Distributed under the same terms as Vim itself. See :help license.
