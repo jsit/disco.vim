@@ -169,13 +169,7 @@ call <SID>set_colors("SpellCap"     , s:red          , "NONE"         , "")
 call <SID>set_colors("SpellLocal"   , s:red          , "NONE"         , "")
 call <SID>set_colors("SpellRare"    , s:bg           , s:dimred       , "")
 call <SID>set_colors("StatusLine"   , ""             , ""             , "reverse")
-
-if s:dimtwo != s:dim
-	call <SID>set_colors("StatusLineNC" , s:dimtwo       , ""          , "")
-else
-	call <SID>set_colors("StatusLineNC" , s:dimtwo       , ""          , "")
-endif
-
+call <SID>set_colors("StatusLineNC" , s:dimtwo       , ""          , "")
 call <SID>set_colors("TabLine"      , s:fg           , s:dim          , "NONE")
 call <SID>set_colors("TabLineFill"  , s:fg           , "lightgray"    , "")
 call <SID>set_colors("TabLineSel"   , "NONE"         , "NONE"         , "")
