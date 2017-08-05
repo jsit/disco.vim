@@ -2,8 +2,7 @@
 " Maintainer: [jsit] <jay@jaysitter.com>
 " Last Change:  
 " URL: http://jaysitter.com
-" Description: A full set of 1-, 8-, 16-, 88-, 256-, and GUI-color-compatible
-" colors.
+" Description: A full set of 1-, 8-, 16-, 88-, 256-, and GUI-color-compatible colors.
 
 " Sets the highlighting for the given group. {{{
 " From github.com/jsit/vim-tomorrow-theme
