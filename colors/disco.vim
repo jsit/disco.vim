@@ -40,7 +40,7 @@ if exists("syntax_on")
 	syntax reset
 endif
 
-let colors_name = "disco"
+let g:colors_name = "disco"
 
 " Check to see if we can do colors 8-15
 if has('gui_running') || (&t_Co > 8 && (!exists('g:disco_nobright') || g:disco_nobright != 1))
