@@ -49,6 +49,13 @@ else
 	let s:gt_eight = 0
 endif
 
+" Check to see if we can do italic
+if (&t_ZH != '[7m')
+	let s:italic = 1
+else
+	let s:italic = 0
+endif
+
 
 
 " Define our colors based on the background setting {{{
@@ -185,7 +192,11 @@ call <SID>set_colors("WildMenu"     , s:green        , "lightgray"    , "")
 
 " Group Names (:h group-name) {{{
 
-call <SID>set_colors("Comment", s:dimtwo, "", "")
+if (s:italic)
+	call <SID>set_colors("Comment", s:dimtwo, "", "italic")
+else
+	call <SID>set_colors("Comment", s:dimtwo, "", "NONE")
+endif
 
 call <SID>set_colors("Constant", s:green, "", "")
 hi link String    Constant
@@ -197,7 +208,11 @@ hi link Float     Constant
 call <SID>set_colors("Identifier", s:red, "", "NONE")
 hi link Function Identifier
 
-call <SID>set_colors("Statement", s:magenta, "", "NONE")
+if (s:italic)
+	call <SID>set_colors("Statement", s:magenta, "", "italic")
+else
+	call <SID>set_colors("Statement", s:magenta, "", "NONE")
+endif
 hi link Conditional Statement
 hi link Repeat      Statement
 hi link Label       Statement
