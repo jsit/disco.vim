@@ -194,7 +194,7 @@ hi link Number    Constant
 hi link Boolean   Constant
 hi link Float     Constant
 
-call <SID>set_colors("Identifier", s:red, "", "")
+call <SID>set_colors("Identifier", s:red, "", "NONE")
 hi link Function Identifier
 
 call <SID>set_colors("Statement", s:magenta, "", "NONE")
