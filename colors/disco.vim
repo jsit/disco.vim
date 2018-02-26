@@ -78,7 +78,7 @@ else
 	if s:gt_eight
 		let s:dim          = [7  , 'LightGray']
 		let s:dimtwo       = [8  , 'DarkGray']
-		let s:bg           = ['NONE' , 'NONE']
+		let s:bg           = [15 , 'White']
 		let s:dimred       = [9  , 'Red']
 		let s:dimgreen     = [10 , 'Green']
 		let s:dimcyan      = [14 , 'Cyan']
@@ -304,6 +304,11 @@ exe 'hi link htmlSpecialTagName Exception'
 " Diff Highlighting
 exe 'hi link diffAdded   DiffAdd'
 exe 'hi link diffRemoved DiffDelete'
+
+" vim-showmarks
+call <SID>set_colors("ShowMarksHLl" , s:bg , s:blue , "")
+call <SID>set_colors("ShowMarksHLu" , s:bg , s:blue , "")
+call <SID>set_colors("ShowMarksHLo" , s:bg , s:blue , "")
 
 " End syntax-specific highlighting }}}
 
