@@ -212,11 +212,7 @@ hi link Float     Constant
 call <SID>set_colors("Identifier", s:red, "", "NONE")
 hi link Function Identifier
 
-if (s:italic)
-	call <SID>set_colors("Statement", s:magenta, "", "italic")
-else
-	call <SID>set_colors("Statement", s:magenta, "", "NONE")
-endif
+call <SID>set_colors("Statement", s:magenta, "", "NONE")
 hi link Conditional Statement
 hi link Repeat      Statement
 hi link Label       Statement
