@@ -109,7 +109,11 @@ endif
 if s:dimtwo != s:dim " Needs to be different from Comment
 	call <SID>set_colors("ColorColumn"  , "NONE"         , s:dim          , "")
 	call <SID>set_colors("CursorColumn" , "NONE"         , s:dim          , "")
-	call <SID>set_colors("CursorLine"   , "NONE"         , s:dim          , "")
+	if s:gt_eight
+		call <SID>set_colors("CursorLine"   , "NONE"         , s:dim          , "NONE")
+	else
+		call <SID>set_colors("CursorLine"   , "NONE"         , s:dim          , "")
+	endif
 else
 	call <SID>set_colors("ColorColumn"  , "NONE"         , "NONE"         , "")
 	call <SID>set_colors("CursorColumn" , "NONE"         , "NONE"         , "")
