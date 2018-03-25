@@ -186,10 +186,10 @@ call <SID>set_colors("SpellBad"     , s:dimred       , s:fg           , "reverse
 call <SID>set_colors("SpellCap"     , "NONE"         , s:red          , "reverse")
 call <SID>set_colors("SpellLocal"   , "NONE"         , s:red          , "reverse")
 call <SID>set_colors("SpellRare"    , s:dimred       , s:fg           , "reverse")
-call <SID>set_colors("StatusLine"   , ""             , ""             , "reverse")
-call <SID>set_colors("StatusLineNC" , s:dim          , ""             , "")
-call <SID>set_colors("StatusLineTerm"   , s:green          , ""             , "reverse")
-call <SID>set_colors("StatusLineTermNC" , s:dimgreen       , ""             , "reverse")
+call <SID>set_colors("StatusLine"   , "NONE"             , "NONE"             , "reverse")
+call <SID>set_colors("StatusLineNC" , s:dim          , "NONE"             , "")
+call <SID>set_colors("StatusLineTerm"   , s:green          , "NONE"             , "reverse")
+call <SID>set_colors("StatusLineTermNC" , s:dimgreen       , "NONE"             , "reverse")
 call <SID>set_colors("TabLine"      , s:fg           , s:dim          , "NONE")
 call <SID>set_colors("TabLineFill"  , s:dim          , s:dimtwo       , "")
 call <SID>set_colors("TabLineSel"   , "NONE"         , "NONE"         , "NONE")
@@ -206,12 +206,12 @@ call <SID>set_colors("WildMenu"     , s:green        , s:dim    , "")
 " Group Names (:h group-name) {{{
 
 if (s:italic)
-	call <SID>set_colors("Comment", s:dimtwo, "", "italic")
+	call <SID>set_colors("Comment", s:dimtwo, "NONE", "italic")
 else
-	call <SID>set_colors("Comment", s:dimtwo, "", "NONE")
+	call <SID>set_colors("Comment", s:dimtwo, "NONE", "NONE")
 endif
 
-call <SID>set_colors("Constant", s:green, "", "")
+call <SID>set_colors("Constant", s:green, "NONE", "")
 hi link String    Constant
 hi link Character Constant
 hi link Number    Constant
@@ -219,13 +219,13 @@ hi link Boolean   Constant
 hi link Float     Constant
 
 if s:gt_eight " Only turn off bold if we have enough colors
-	call <SID>set_colors("Identifier", s:alt_red, "", "NONE")
+	call <SID>set_colors("Identifier", s:alt_red, "NONE", "NONE")
 else
-	call <SID>set_colors("Identifier", s:alt_red, "", "")
+	call <SID>set_colors("Identifier", s:alt_red, "NONE", "")
 endif
 hi link Function Identifier
 
-call <SID>set_colors("Statement", s:magenta, "", "")
+call <SID>set_colors("Statement", s:magenta, "NONE", "")
 hi link Conditional Statement
 hi link Repeat      Statement
 hi link Label       Statement
@@ -233,26 +233,26 @@ hi link Operator    Statement
 hi link Keyword     Statement
 hi link Exception   Statement
 
-call <SID>set_colors("PreProc", s:blue, "", "")
+call <SID>set_colors("PreProc", s:blue, "NONE", "")
 hi link Include   PreProc
 hi link Define    PreProc
 hi link Macro     PreProc
 hi link PreCondit PreProc
 
-call <SID>set_colors("Type", s:cyan, "", "NONE")
+call <SID>set_colors("Type", s:cyan, "NONE", "NONE")
 hi link StorageClass Type
 hi link Structure    Type
 hi link Typedef      Type
 
-call <SID>set_colors("Special", s:yellow, "", "")
+call <SID>set_colors("Special", s:yellow, "NONE", "")
 hi link SpecialChar    Special
 hi link Tag            Special
 hi link Delimiter      Special
 hi link SpecialComment Special
 hi link Debug          Special
 
-call <SID>set_colors("Underlined" , ""       , ""             , "underline")
-call <SID>set_colors("Ignore"     , s:dim    , ""             , "")
+call <SID>set_colors("Underlined" , "NONE"       , "NONE"             , "underline")
+call <SID>set_colors("Ignore"     , s:dim    , "NONE"             , "")
 call <SID>set_colors("Error"      , s:red    , s:fg           , "reverse")
 call <SID>set_colors("Todo"       , s:bg   , s:yellow       , "")
 
