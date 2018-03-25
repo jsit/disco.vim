@@ -133,17 +133,17 @@ call <SID>set_colors("CursorIM"     , "NONE"   , "NONE"     , "")
 
 call <SID>set_colors("CursorLineNr" , "NONE"   , s:dim      , "")
 call <SID>set_colors("Directory"    , s:blue   , "NONE"     , "")
-call <SID>set_colors("DiffAdd"      , s:bg     , s:dimgreen , "NONE")
-call <SID>set_colors("DiffDelete"   , s:bg     , s:dimred   , "NONE")
-call <SID>set_colors("DiffChange"   , s:dim    , s:dimcyan  , "NONE")
-call <SID>set_colors("DiffText"     , s:dimtwo , s:cyan     , "NONE")
+call <SID>set_colors("DiffAdd"      , s:bg     , s:dimgreen , "")
+call <SID>set_colors("DiffDelete"   , s:bg     , s:dimred   , "")
+call <SID>set_colors("DiffChange"   , s:dim    , s:dimcyan  , "")
+call <SID>set_colors("DiffText"     , s:dimtwo , s:cyan     , "")
 hi link EndOfBuffer NonText
 call <SID>set_colors("ErrorMsg"     , s:fg           , s:red    , "")
 
 if s:dimtwo != s:dim " Needs to be different from SignColumn
-	call <SID>set_colors("VertSplit" , s:dimtwo , s:dimtwo , "NONE")
+	call <SID>set_colors("VertSplit" , s:dimtwo , "NONE" , "NONE")
 else
-	call <SID>set_colors("VertSplit" , s:fg     , s:fg     , "reverse")
+	call <SID>set_colors("VertSplit" , s:fg     , "NONE" , "reverse")
 endif
 
 if s:dimtwo != s:dim
@@ -208,7 +208,7 @@ call <SID>set_colors("WildMenu"         , s:green    , s:dim          , "")
 if (s:italic)
 	call <SID>set_colors("Comment", s:dimtwo, "NONE", "italic")
 else
-	call <SID>set_colors("Comment", s:dimtwo, "NONE", "NONE")
+	call <SID>set_colors("Comment", s:dimtwo, "NONE", "")
 endif
 
 call <SID>set_colors("Constant", s:green, "NONE", "")
@@ -239,7 +239,7 @@ hi link Define    PreProc
 hi link Macro     PreProc
 hi link PreCondit PreProc
 
-call <SID>set_colors("Type", s:cyan, "NONE", "NONE")
+call <SID>set_colors("Type", s:cyan, "NONE", "")
 hi link StorageClass Type
 hi link Structure    Type
 hi link Typedef      Type
