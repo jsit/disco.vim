@@ -10,7 +10,7 @@
 fun! <SID>set_colors(group, fg, bg, attr)
 
 	if !empty(a:fg)
-		if type(a:fg) == 3
+		if type(a:fg) == 3 " If a:fg is a list
 			exec "hi " . a:group . " guifg=" . get(a:fg, 1) . " ctermfg=" . get(a:fg, 0)
 		else
 			exec "hi " . a:group . " guifg=" . a:fg . " ctermfg=" . a:fg
@@ -18,7 +18,7 @@ fun! <SID>set_colors(group, fg, bg, attr)
 	endif
 
 	if !empty(a:bg)
-		if type(a:bg) == 3
+		if type(a:bg) == 3 " If a:bg is a list
 			exec "hi " . a:group . " guibg=" . get(a:bg, 1) . " ctermbg=" . get(a:bg, 0)
 		else
 			exec "hi " . a:group . " guibg=" . a:bg . " ctermbg=" . a:bg
