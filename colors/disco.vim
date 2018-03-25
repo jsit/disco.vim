@@ -251,7 +251,7 @@ hi link Debug          Special
 
 call <SID>set_colors("Underlined" , "NONE"   , "NONE"         , "underline")
 call <SID>set_colors("Ignore"     , s:dim    , ""             , "")
-call <SID>set_colors("Error"      , "white"  , s:red          , "")
+call <SID>set_colors("Error"      , s:red    , "white"        , "reverse")
 call <SID>set_colors("Todo"       , "white" , s:dimred , "")
 
 " End Group Names }}}
