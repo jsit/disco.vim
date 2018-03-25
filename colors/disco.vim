@@ -133,10 +133,10 @@ call <SID>set_colors("CursorIM"     , "NONE"         , "NONE"         , "")
 
 call <SID>set_colors("CursorLineNr" , "NONE"         , s:dim          , "")
 call <SID>set_colors("Directory"    , s:blue         , "NONE"         , "")
-call <SID>set_colors("DiffAdd"      , ""             , s:dimgreen     , "")
-call <SID>set_colors("DiffChange"   , "NONE"         , s:dimcyan      , "")
-call <SID>set_colors("DiffDelete"   , s:red          , s:dimred       , "")
-call <SID>set_colors("DiffText"     , "white"        , s:magenta      , "")
+call <SID>set_colors("DiffAdd"      , s:bg           , s:dimgreen     , "NONE")
+call <SID>set_colors("DiffDelete"   , s:bg           , s:dimred       , "NONE")
+call <SID>set_colors("DiffChange"   , s:dim          , s:dimcyan      , "NONE")
+call <SID>set_colors("DiffText"     , s:dimtwo       , s:cyan         , "NONE")
 hi link EndOfBuffer NonText
 call <SID>set_colors("ErrorMsg"     , "white"        , s:red    , "")
 
