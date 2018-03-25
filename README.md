@@ -4,6 +4,13 @@ A full set of 1-, 8-, 16-, 88-, 256-, and GUI-color-compatible Vim colors. Aims 
 
 Codebase derived from jsit/vim-tomorrow-theme (which was derived from chriskempson/vim-tomorrow-theme)
 
+# Options
+
+- `g:disco_nobright`: If set to `1`, don't use bright colors. Default `0`.
+- `g:disco_red_error_only`: If set to `1`, only use the red color for
+  errors -- useful for terminal themes that intend to reserve this color for
+  that purpose, like [Rainglow](https://rainglow.io/). Default `0`.
+
 # Screenshots
 
 These screenshots were made using iTerm2 with the specified
