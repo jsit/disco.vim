@@ -187,7 +187,7 @@ call <SID>set_colors("SpellCap"     , s:red          , "NONE"         , "")
 call <SID>set_colors("SpellLocal"   , s:red          , "NONE"         , "")
 call <SID>set_colors("SpellRare"    , s:bg           , s:dimred       , "")
 call <SID>set_colors("StatusLine"   , ""             , ""             , "reverse")
-call <SID>set_colors("StatusLineNC" , s:dimtwo       , ""             , "")
+call <SID>set_colors("StatusLineNC" , s:dim          , ""             , "")
 call <SID>set_colors("TabLine"      , s:fg           , s:dim          , "NONE")
 call <SID>set_colors("TabLineFill"  , s:dim          , s:dimtwo       , "")
 call <SID>set_colors("TabLineSel"   , "NONE"         , "NONE"         , "")
@@ -195,7 +195,7 @@ call <SID>set_colors("Title"        , "NONE"         , "NONE"         , "bold")
 call <SID>set_colors("Visual"       , "NONE"         , s:dim          , "")
 call <SID>set_colors("VisualNOS"    , s:dim          , "NONE"         , "")
 call <SID>set_colors("WarningMsg"   , s:red          , "NONE"         , "")
-call <SID>set_colors("WildMenu"     , s:green        , "lightgray"    , "")
+call <SID>set_colors("WildMenu"     , s:green        , s:dim    , "")
 
 " End Highlight Groups }}}
 
