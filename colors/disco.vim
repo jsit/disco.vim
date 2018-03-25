@@ -91,9 +91,9 @@ else
 		let s:dimcyan      = [14 , 'Cyan']
 		let s:brightyellow = [11 , 'Yellow']
 	else
-		let s:dim          = [7  , 'LightGray']
-		let s:dimtwo       = [7  , 'LightGray']
-		let s:bg           = ['NONE'  , 'NONE']
+		let s:dim          = [7      , 'LightGray']
+		let s:dimtwo       = [7      , 'LightGray']
+		let s:bg           = ['NONE' , 'NONE']
 		let s:dimred       = s:red
 		let s:dimgreen     = s:green
 		let s:dimcyan      = s:cyan
@@ -114,46 +114,46 @@ endif
 " Highlight Groups (:h highlight-groups) {{{
 
 if s:dimtwo != s:dim " Needs to be different from Comment
-	call <SID>set_colors("ColorColumn"  , "NONE"         , s:dim          , "")
-	call <SID>set_colors("CursorColumn" , "NONE"         , s:dim          , "")
+	call <SID>set_colors("ColorColumn"  , "NONE" , s:dim , "")
+	call <SID>set_colors("CursorColumn" , "NONE" , s:dim , "")
 	if s:gt_eight " Only turn off bold if we have enough colors
-		call <SID>set_colors("CursorLine"   , "NONE"         , s:dim          , "NONE")
+		call <SID>set_colors("CursorLine" , "NONE" , s:dim , "NONE")
 	else
-		call <SID>set_colors("CursorLine"   , "NONE"         , s:dim          , "")
+		call <SID>set_colors("CursorLine" , "NONE" , s:dim , "")
 	endif
 else
-	call <SID>set_colors("ColorColumn"  , "NONE"         , "NONE"         , "")
-	call <SID>set_colors("CursorColumn" , "NONE"         , "NONE"         , "")
-	call <SID>set_colors("CursorLine"   , "NONE"         , "NONE"         , "")
+	call <SID>set_colors("ColorColumn"  , "NONE" , "NONE" , "")
+	call <SID>set_colors("CursorColumn" , "NONE" , "NONE" , "")
+	call <SID>set_colors("CursorLine"   , "NONE" , "NONE" , "")
 endif
 
-call <SID>set_colors("Conceal"      , "NONE"         , "NONE"         , "")
-call <SID>set_colors("Cursor"       , "NONE"         , "NONE"         , "reverse")
-call <SID>set_colors("CursorIM"     , "NONE"         , "NONE"         , "")
+call <SID>set_colors("Conceal"      , "NONE"   , "NONE"     , "")
+call <SID>set_colors("Cursor"       , "NONE"   , "NONE"     , "reverse")
+call <SID>set_colors("CursorIM"     , "NONE"   , "NONE"     , "")
 
-call <SID>set_colors("CursorLineNr" , "NONE"         , s:dim          , "")
-call <SID>set_colors("Directory"    , s:blue         , "NONE"         , "")
-call <SID>set_colors("DiffAdd"      , s:bg           , s:dimgreen     , "NONE")
-call <SID>set_colors("DiffDelete"   , s:bg           , s:dimred       , "NONE")
-call <SID>set_colors("DiffChange"   , s:dim          , s:dimcyan      , "NONE")
-call <SID>set_colors("DiffText"     , s:dimtwo       , s:cyan         , "NONE")
+call <SID>set_colors("CursorLineNr" , "NONE"   , s:dim      , "")
+call <SID>set_colors("Directory"    , s:blue   , "NONE"     , "")
+call <SID>set_colors("DiffAdd"      , s:bg     , s:dimgreen , "NONE")
+call <SID>set_colors("DiffDelete"   , s:bg     , s:dimred   , "NONE")
+call <SID>set_colors("DiffChange"   , s:dim    , s:dimcyan  , "NONE")
+call <SID>set_colors("DiffText"     , s:dimtwo , s:cyan     , "NONE")
 hi link EndOfBuffer NonText
 call <SID>set_colors("ErrorMsg"     , s:fg           , s:red    , "")
 
 if s:dimtwo != s:dim " Needs to be different from SignColumn
-	call <SID>set_colors("VertSplit"    , s:dimtwo       , s:dimtwo , "NONE")
+	call <SID>set_colors("VertSplit" , s:dimtwo , s:dimtwo , "NONE")
 else
-	call <SID>set_colors("VertSplit"    , s:fg       , s:fg , "reverse")
+	call <SID>set_colors("VertSplit" , s:fg     , s:fg     , "reverse")
 endif
 
 if s:dimtwo != s:dim
-	call <SID>set_colors("Folded"       , s:dimtwo       , s:dim    , "")
-	call <SID>set_colors("FoldColumn"   , s:dimtwo       , s:dim    , "")
-	call <SID>set_colors("SignColumn"   , s:dimtwo       , s:dim    , "")
+	call <SID>set_colors("Folded"     , s:dimtwo , s:dim    , "")
+	call <SID>set_colors("FoldColumn" , s:dimtwo , s:dim    , "")
+	call <SID>set_colors("SignColumn" , s:dimtwo , s:dim    , "")
 else
-	call <SID>set_colors("Folded"       , "NONE"      , s:dimtwo    , "")
-	call <SID>set_colors("FoldColumn"   , "NONE"      , s:dimtwo    , "")
-	call <SID>set_colors("SignColumn"   , "NONE"      , s:dimtwo    , "")
+	call <SID>set_colors("Folded"     , "NONE"   , s:dimtwo , "")
+	call <SID>set_colors("FoldColumn" , "NONE"   , s:dimtwo , "")
+	call <SID>set_colors("SignColumn" , "NONE"   , s:dimtwo , "")
 endif
 
 call <SID>set_colors("IncSearch"    , s:brightyellow , "black"  , "reverse")
@@ -164,40 +164,40 @@ call <SID>set_colors("MoreMsg"      , s:green        , "NONE"   , "")
 call <SID>set_colors("NonText"      , s:dim          , "NONE"   , "")
 
 if &background == "dark" && has('gui_running')
-	call <SID>set_colors("Normal"     , "white"        , "black"        , "")
+	call <SID>set_colors("Normal" , "white" , "black" , "")
 else
-	call <SID>set_colors("Normal"     , ""             , ""             , "")
+	call <SID>set_colors("Normal" , ""      , ""      , "")
 endif
 
 call <SID>set_colors("PMenu"        , s:fg           , s:dim          , "")
 
 if s:dimtwo != s:dim
-	call <SID>set_colors("PMenuSel"     , s:dim          , s:dimtwo       , "")
+	call <SID>set_colors("PMenuSel" , s:dim , s:dimtwo , "")
 else
-	call <SID>set_colors("PMenuSel"     , s:dim          , s:fg       , "")
+	call <SID>set_colors("PMenuSel" , s:dim , s:fg     , "")
 endif
 
-call <SID>set_colors("PMenuSbar"    , s:fg           , s:dim          , "")
-call <SID>set_colors("PMenuThumb"   , s:fg           , s:dim          , "")
-call <SID>set_colors("Question"     , s:green        , "NONE"         , "")
-call <SID>set_colors("Search"       , "black"        , s:brightyellow , "")
-call <SID>set_colors("SpecialKey"   , s:dim          , "NONE"         , "")
-call <SID>set_colors("SpellBad"     , s:dimred       , s:fg           , "reverse")
-call <SID>set_colors("SpellCap"     , "NONE"         , s:red          , "reverse")
-call <SID>set_colors("SpellLocal"   , "NONE"         , s:red          , "reverse")
-call <SID>set_colors("SpellRare"    , s:dimred       , s:fg           , "reverse")
-call <SID>set_colors("StatusLine"   , "NONE"             , "NONE"             , "reverse")
-call <SID>set_colors("StatusLineNC" , s:dim          , "NONE"             , "")
-call <SID>set_colors("StatusLineTerm"   , s:green          , "NONE"             , "reverse")
-call <SID>set_colors("StatusLineTermNC" , s:dimgreen       , "NONE"             , "reverse")
-call <SID>set_colors("TabLine"      , s:fg           , s:dim          , "NONE")
-call <SID>set_colors("TabLineFill"  , s:dim          , s:dimtwo       , "")
-call <SID>set_colors("TabLineSel"   , "NONE"         , "NONE"         , "NONE")
-call <SID>set_colors("Title"        , "NONE"         , "NONE"         , "")
-call <SID>set_colors("Visual"       , "NONE"         , s:dim          , "")
-call <SID>set_colors("VisualNOS"    , s:dim          , "NONE"         , "")
-call <SID>set_colors("WarningMsg"   , s:red          , "NONE"         , "")
-call <SID>set_colors("WildMenu"     , s:green        , s:dim    , "")
+call <SID>set_colors("PMenuSbar"        , s:fg       , s:dim          , "")
+call <SID>set_colors("PMenuThumb"       , s:fg       , s:dim          , "")
+call <SID>set_colors("Question"         , s:green    , "NONE"         , "")
+call <SID>set_colors("Search"           , "black"    , s:brightyellow , "")
+call <SID>set_colors("SpecialKey"       , s:dim      , "NONE"         , "")
+call <SID>set_colors("SpellBad"         , s:dimred   , s:fg           , "reverse")
+call <SID>set_colors("SpellCap"         , "NONE"     , s:red          , "reverse")
+call <SID>set_colors("SpellLocal"       , "NONE"     , s:red          , "reverse")
+call <SID>set_colors("SpellRare"        , s:dimred   , s:fg           , "reverse")
+call <SID>set_colors("StatusLine"       , "NONE"     , "NONE"         , "reverse")
+call <SID>set_colors("StatusLineNC"     , s:dim      , "NONE"         , "")
+call <SID>set_colors("StatusLineTerm"   , s:green    , "NONE"         , "reverse")
+call <SID>set_colors("StatusLineTermNC" , s:dimgreen , "NONE"         , "reverse")
+call <SID>set_colors("TabLine"          , s:fg       , s:dim          , "NONE")
+call <SID>set_colors("TabLineFill"      , s:dim      , s:dimtwo       , "")
+call <SID>set_colors("TabLineSel"       , "NONE"     , "NONE"         , "NONE")
+call <SID>set_colors("Title"            , "NONE"     , "NONE"         , "")
+call <SID>set_colors("Visual"           , "NONE"     , s:dim          , "")
+call <SID>set_colors("VisualNOS"        , s:dim      , "NONE"         , "")
+call <SID>set_colors("WarningMsg"       , s:red      , "NONE"         , "")
+call <SID>set_colors("WildMenu"         , s:green    , s:dim          , "")
 
 " End Highlight Groups }}}
 
@@ -251,10 +251,10 @@ hi link Delimiter      Special
 hi link SpecialComment Special
 hi link Debug          Special
 
-call <SID>set_colors("Underlined" , "NONE"       , "NONE"             , "underline")
-call <SID>set_colors("Ignore"     , s:dim    , "NONE"             , "")
-call <SID>set_colors("Error"      , s:red    , s:fg           , "reverse")
-call <SID>set_colors("Todo"       , s:bg   , s:yellow       , "")
+call <SID>set_colors("Underlined" , "NONE" , "NONE"   , "underline")
+call <SID>set_colors("Ignore"     , s:dim  , "NONE"   , "")
+call <SID>set_colors("Error"      , s:red  , s:fg     , "reverse")
+call <SID>set_colors("Todo"       , s:bg   , s:yellow , "")
 
 " End Group Names }}}
 
@@ -306,9 +306,9 @@ exe 'hi link goStatement Statement'
 exe 'hi link goConditional Conditional'
 exe 'hi link goRepeat Repeat'
 exe 'hi link goException Exception'
-call <SID>set_colors("goDeclaration" , s:blue    , "NONE" , "")
+call <SID>set_colors("goDeclaration" , s:blue , "NONE" , "")
 exe 'hi link goConstants Constant'
-call <SID>set_colors("goBuiltins"    , s:cyan    , "NONE" , "")
+call <SID>set_colors("goBuiltins"    , s:cyan , "NONE" , "")
 
 " CoffeeScript Highlighting
 exe 'hi link coffeeKeyword Keyword'
