@@ -223,7 +223,7 @@ else
 endif
 hi link Function Identifier
 
-call <SID>set_colors("Statement", s:magenta, "", "NONE")
+call <SID>set_colors("Statement", s:magenta, "", "")
 hi link Conditional Statement
 hi link Repeat      Statement
 hi link Label       Statement
