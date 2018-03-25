@@ -138,7 +138,7 @@ call <SID>set_colors("DiffDelete"   , s:bg           , s:dimred       , "NONE")
 call <SID>set_colors("DiffChange"   , s:dim          , s:dimcyan      , "NONE")
 call <SID>set_colors("DiffText"     , s:dimtwo       , s:cyan         , "NONE")
 hi link EndOfBuffer NonText
-call <SID>set_colors("ErrorMsg"     , "white"        , s:red    , "")
+call <SID>set_colors("ErrorMsg"     , s:fg           , s:red    , "")
 
 if s:dimtwo != s:dim " Needs to be different from SignColumn
 	call <SID>set_colors("VertSplit"    , s:dimtwo       , s:dimtwo , "NONE")
@@ -249,10 +249,10 @@ hi link Delimiter      Special
 hi link SpecialComment Special
 hi link Debug          Special
 
-call <SID>set_colors("Underlined" , "NONE"   , "NONE"         , "underline")
+call <SID>set_colors("Underlined" , ""       , ""             , "underline")
 call <SID>set_colors("Ignore"     , s:dim    , ""             , "")
-call <SID>set_colors("Error"      , s:red    , "white"        , "reverse")
-call <SID>set_colors("Todo"       , "white" , s:dimred , "")
+call <SID>set_colors("Error"      , s:red    , s:fg           , "reverse")
+call <SID>set_colors("Todo"       , s:bg   , s:yellow       , "")
 
 " End Group Names }}}
 
