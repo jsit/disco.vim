@@ -166,7 +166,7 @@ call <SID>set_colors("NonText"      , s:dim          , "NONE"   , "")
 if &background == "dark" && has('gui_running')
 	call <SID>set_colors("Normal"     , "white"        , "black"        , "")
 else
-	call <SID>set_colors("Normal"     , ""             , ""             , "NONE")
+	call <SID>set_colors("Normal"     , ""             , ""             , "")
 endif
 
 call <SID>set_colors("PMenu"        , s:fg           , s:dim          , "")
