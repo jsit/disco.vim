@@ -100,6 +100,13 @@ else
 		let s:brightyellow = s:yellow
 	endif
 endif
+
+" Use something other than red if user has asked to use red only for errors
+if exists('g:disco_red_error_only') && g:disco_red_error_only == 1
+	let s:alt_red = s:cyan
+else
+	let s:alt_red = s:red
+endif
 " }}}
 
 
@@ -209,7 +216,11 @@ hi link Number    Constant
 hi link Boolean   Constant
 hi link Float     Constant
 
-call <SID>set_colors("Identifier", s:red, "", "NONE")
+if s:gt_eight " Only turn off bold if we have enough colors
+	call <SID>set_colors("Identifier", s:alt_red, "", "NONE")
+else
+	call <SID>set_colors("Identifier", s:alt_red, "", "")
+endif
 hi link Function Identifier
 
 call <SID>set_colors("Statement", s:magenta, "", "NONE")
@@ -261,7 +272,7 @@ call <SID>set_colors("cConditional"  , s:magenta , "NONE" , "")
 call <SID>set_colors("cRepeat"       , s:magenta , "NONE" , "")
 
 " PHP Highlighting
-call <SID>set_colors("phpVarSelector"    , s:red     , "NONE" , "")
+call <SID>set_colors("phpVarSelector"    , s:alt_red , "NONE" , "")
 call <SID>set_colors("phpKeyword"        , s:magenta , "NONE" , "")
 call <SID>set_colors("phpRepeat"         , s:magenta , "NONE" , "")
 call <SID>set_colors("phpConditional"    , s:magenta , "NONE" , "")
