@@ -141,9 +141,9 @@ hi link EndOfBuffer NonText
 call <SID>set_colors("ErrorMsg"     , s:fg     , s:red      , "")
 
 if s:dimtwo != s:dim " Needs to be different from SignColumn
-	call <SID>set_colors("VertSplit" , s:dimtwo , "" , "NONE")
+	call <SID>set_colors("VertSplit" , s:dimtwo , s:dimtwo , "NONE")
 else
-	call <SID>set_colors("VertSplit" , s:fg     , "" , "reverse")
+	call <SID>set_colors("VertSplit" , s:fg     , s:fg , "reverse")
 endif
 
 if s:dimtwo != s:dim
