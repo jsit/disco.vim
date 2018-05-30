@@ -67,6 +67,26 @@ if &background == "dark" && s:gt_eight
 	let s:bg           = [0  , 'Black']
 	let s:fg           = [15 , 'White']
 
+else
+
+	let s:fg           = [0  , 'Black']
+
+	if s:gt_eight
+		let s:bg           = [15 , 'White']
+		let s:dim          = [7  , 'LightGray']
+		let s:dimtwo       = [8  , 'DarkGray']
+	else
+		let s:bg           = ['NONE' , 'NONE']
+		let s:dim          = [7      , 'LightGray']
+		let s:dimtwo       = [7      , 'LightGray']
+	endif
+
+endif
+
+
+
+if &background == "dark" && s:gt_eight && (!exists('g:disco_usedark') || g:disco_usedark != 1)
+
 	let s:red          = [9  , 'Red']
 	let s:green        = [10 , 'Green']
 	let s:yellow       = [11 , 'Yellow']
@@ -85,8 +105,6 @@ if &background == "dark" && s:gt_eight
 
 else
 
-	let s:fg           = [0  , 'Black']
-
 	let s:red          = [1  , 'DarkRed']
 	let s:green        = [2  , 'DarkGreen']
 	let s:yellow       = [3  , 'DarkYellow']
@@ -95,11 +113,6 @@ else
 	let s:cyan         = [6  , 'DarkCyan']
 
 	if s:gt_eight
-
-		let s:bg           = [15 , 'White']
-
-		let s:dim          = [7  , 'LightGray']
-		let s:dimtwo       = [8  , 'DarkGray']
 
 		let s:dimred       = [9  , 'Red']
 		let s:dimgreen     = [10 , 'Green']
@@ -111,11 +124,6 @@ else
 		let s:brightyellow = [11 , 'Yellow']
 
 	else
-
-		let s:bg           = ['NONE' , 'NONE']
-
-		let s:dim          = [7      , 'LightGray']
-		let s:dimtwo       = [7      , 'LightGray']
 
 		let s:dimred       = s:red
 		let s:dimgreen     = s:green
