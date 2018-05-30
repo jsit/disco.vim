@@ -60,44 +60,72 @@ endif
 
 " Define our colors based on the background setting {{{
 if &background == "dark" && s:gt_eight
+
 	let s:dim          = [8  , 'DarkGray']
 	let s:dimtwo       = [7  , 'LightGray']
+
 	let s:bg           = [0  , 'Black']
 	let s:fg           = [15 , 'White']
-	let s:blue         = [12 , 'Blue']
-	let s:yellow       = [11 , 'Yellow']
+
 	let s:red          = [9  , 'Red']
 	let s:green        = [10 , 'Green']
-	let s:cyan         = [14 , 'Cyan']
+	let s:yellow       = [11 , 'Yellow']
+	let s:blue         = [12 , 'Blue']
 	let s:magenta      = [13 , 'Magenta']
+	let s:cyan         = [14 , 'Cyan']
+
 	let s:dimred       = [1  , 'DarkRed']
 	let s:dimgreen     = [2  , 'DarkGreen']
+	let s:dimyellow    = [3  , 'DarkYellow']
+	let s:dimblue      = [4  , 'DarkBlue']
+	let s:dimmagenta   = [5  , 'DarkMagenta']
 	let s:dimcyan      = [6  , 'DarkCyan']
+
 	let s:brightyellow = [11 , 'Yellow']
+
 else
+
 	let s:fg           = [0  , 'Black']
-	let s:blue         = [4  , 'DarkBlue']
-	let s:yellow       = [3  , 'DarkYellow']
+
 	let s:red          = [1  , 'DarkRed']
 	let s:green        = [2  , 'DarkGreen']
-	let s:cyan         = [6  , 'DarkCyan']
+	let s:yellow       = [3  , 'DarkYellow']
+	let s:blue         = [4  , 'DarkBlue']
 	let s:magenta      = [5  , 'DarkMagenta']
+	let s:cyan         = [6  , 'DarkCyan']
+
 	if s:gt_eight
+
+		let s:bg           = [15 , 'White']
+
 		let s:dim          = [7  , 'LightGray']
 		let s:dimtwo       = [8  , 'DarkGray']
-		let s:bg           = [15 , 'White']
+
 		let s:dimred       = [9  , 'Red']
 		let s:dimgreen     = [10 , 'Green']
+		let s:dimyellow    = [11 , 'Yellow']
+		let s:dimblue      = [12 , 'Blue']
+		let s:dimmagenta   = [13 , 'Magenta']
 		let s:dimcyan      = [14 , 'Cyan']
+
 		let s:brightyellow = [11 , 'Yellow']
+
 	else
+
+		let s:bg           = ['NONE' , 'NONE']
+
 		let s:dim          = [7      , 'LightGray']
 		let s:dimtwo       = [7      , 'LightGray']
-		let s:bg           = ['NONE' , 'NONE']
+
 		let s:dimred       = s:red
 		let s:dimgreen     = s:green
+		let s:dimyellow    = s:yellow
+		let s:dimblue      = s:blue
+		let s:dimmagenta   = s:magenta
 		let s:dimcyan      = s:cyan
+
 		let s:brightyellow = s:yellow
+
 	endif
 endif
 
