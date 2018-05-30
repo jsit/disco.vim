@@ -219,9 +219,9 @@ hi link Boolean   Constant
 hi link Float     Constant
 
 if s:gt_eight " Only turn off bold if we have enough colors
-	call <SID>set_colors("Identifier", s:alt_red, "", "NONE")
+	call <SID>set_colors("Identifier", s:cyan, "", "NONE")
 else
-	call <SID>set_colors("Identifier", s:alt_red, "", "")
+	call <SID>set_colors("Identifier", s:cyan, "", "")
 endif
 hi link Function Identifier
 
@@ -239,12 +239,12 @@ hi link Define    PreProc
 hi link Macro     PreProc
 hi link PreCondit PreProc
 
-call <SID>set_colors("Type", s:cyan, "", "")
+call <SID>set_colors("Type", s:yellow, "", "")
 hi link StorageClass Type
 hi link Structure    Type
 hi link Typedef      Type
 
-call <SID>set_colors("Special", s:yellow, "", "")
+call <SID>set_colors("Special", s:alt_red, "", "")
 hi link SpecialChar    Special
 hi link Tag            Special
 hi link Delimiter      Special
