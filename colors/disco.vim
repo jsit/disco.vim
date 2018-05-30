@@ -103,7 +103,7 @@ endif
 
 " Use something other than red if user has asked to use red only for errors
 if exists('g:disco_red_error_only') && g:disco_red_error_only == 1
-	let s:alt_red = s:cyan
+	let s:alt_red = s:dimcyan
 else
 	let s:alt_red = s:red
 endif
