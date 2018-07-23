@@ -194,7 +194,7 @@ else
 	call <SID>set_colors("SignColumn" , "NONE"   , s:dimtwo , "")
 endif
 
-call <SID>set_colors("IncSearch"  , s:brightyellow , "black" , "reverse")
+call <SID>set_colors("IncSearch"  , s:brightyellow , "NONE" , "reverse")
 call <SID>set_colors("LineNr"     , s:dim          , ""      , "")
 call <SID>set_colors("MatchParen" , s:yellow       , "NONE"  , "")
 call <SID>set_colors("ModeMsg"    , s:green        , ""      , "")
@@ -218,7 +218,7 @@ endif
 call <SID>set_colors("PMenuSbar"        , s:fg       , s:dim          , "")
 call <SID>set_colors("PMenuThumb"       , s:fg       , s:dim          , "")
 call <SID>set_colors("Question"         , s:green    , ""             , "")
-call <SID>set_colors("Search"           , "black"    , s:brightyellow , "")
+call <SID>set_colors("Search"           , s:brightyellow, "NONE", "reverse")
 call <SID>set_colors("SpecialKey"       , s:dim      , ""             , "")
 call <SID>set_colors("SpellBad"         , s:dimred   , s:fg           , "reverse")
 call <SID>set_colors("SpellCap"         , ""         , s:red          , "reverse")
