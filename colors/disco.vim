@@ -168,6 +168,12 @@ else
 endif
 " }}}
 
+if exists('g:disco_color_map')
+	for [s:key, s:val] in items(g:disco_color_map)
+		execute 'let s:' . s:key . ' = ' . s:val
+	endfor
+endif
+
 
 
 " Highlight Groups (:h highlight-groups) {{{
