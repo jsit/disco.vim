@@ -410,3 +410,5 @@ call <SID>set_colors("ShowMarksHLo" , s:bg , s:blue , "")
 " Clean up
 delf <SID>set_colors
 unlet s:dim s:dimtwo s:bg s:fg s:blue s:yellow s:red s:green s:cyan s:magenta s:brightyellow s:dimred s:dimgreen s:dimcyan
+
+" ex: set noexpandtab nolist foldmethod=marker:
