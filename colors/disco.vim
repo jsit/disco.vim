@@ -4,22 +4,43 @@
 " URL: http://jaysitter.com
 " Description: A full set of 1-, 8-, 16-, 88-, 256-, and GUI-color-compatible colors.
 
+" We need to use :h color-nr numbers for cterm, in case we are on a low-color
+" terminal
+let s:color_map = {
+	\'Black'       : 0,
+	\'DarkRed'     : 1,
+	\'DarkGreen'   : 2,
+	\'DarkYellow'  : 3,
+	\'DarkBlue'    : 4,
+	\'DarkMagenta' : 5,
+	\'DarkCyan'    : 6,
+	\'LightGray'   : 7,
+	\'DarkGray'    : 8,
+	\'Red'         : 9,
+	\'Green'       : 10,
+	\'Yellow'      : 11,
+	\'Blue'        : 12,
+	\'Magenta'     : 13,
+	\'Cyan'        : 14,
+	\'White'       : 15,
+\}
+
 " Sets the highlighting for the given group. {{{
 " From github.com/jsit/vim-tomorrow-theme
 " Originally by Chris Kempson and contributors
 fun! <SID>set_colors(group, fg, bg, attr)
 
 	if !empty(a:fg)
-		if type(a:fg) == 3 " If a:fg is a list
-			exec "hi " . a:group . " guifg=" . get(a:fg, 1) . " ctermfg=" . get(a:fg, 0)
+		if type(a:fg) == 1 " If a:bg is a string, look it up for cterm
+			exec "hi " . a:group . " guifg=" . a:fg . " ctermfg=" . get(s:color_map, a:fg)
 		else
 			exec "hi " . a:group . " guifg=" . a:fg . " ctermfg=" . a:fg
 		endif
 	endif
 
 	if !empty(a:bg)
-		if type(a:bg) == 3 " If a:bg is a list
-			exec "hi " . a:group . " guibg=" . get(a:bg, 1) . " ctermbg=" . get(a:bg, 0)
+		if type(a:bg) == 1 " If a:bg is a string, look it up for cterm
+			exec "hi " . a:group . " guibg=" .  a:bg . " ctermbg=" . get(s:color_map, a:bg)
 		else
 			exec "hi " . a:group . " guibg=" . a:bg . " ctermbg=" . a:bg
 		endif
@@ -61,67 +82,67 @@ endif
 " Define our colors based on the background setting {{{
 if &background == "dark" && s:gt_eight
 
-	let s:dim          = [8  , 'DarkGray']
-	let s:dimtwo       = [7  , 'LightGray']
+	let s:dim          = 'DarkGray'
+	let s:dimtwo       = 'LightGray'
 
-	let s:bg           = [0  , 'Black']
-	let s:fg           = [15 , 'White']
+	let s:bg           = 'Black'
+	let s:fg           = 'White'
 
 else
 
-	let s:fg           = [0  , 'Black']
+	let s:fg           = 'Black'
 
 	if s:gt_eight
-		let s:bg           = [15 , 'White']
-		let s:dim          = [7  , 'LightGray']
-		let s:dimtwo       = [8  , 'DarkGray']
+		let s:bg           = 'White'
+		let s:dim          = 'LightGray'
+		let s:dimtwo       = 'DarkGray'
 	else
-		let s:bg           = ['NONE' , 'NONE']
-		let s:dim          = [7      , 'LightGray']
-		let s:dimtwo       = [7      , 'LightGray']
+		let s:bg           = 'NONE'
+		let s:dim          = 'LightGray'
+		let s:dimtwo       = 'LightGray'
 	endif
 
 endif
 
 
 
-if &background == "dark" && s:gt_eight && (!exists('g:disco_usedark') || g:disco_usedark != 1)
+if &background == "dark" && s:gt_eight && (!exists('g:disco_fg_dark') || g:disco_fg_dark != 1)
 
-	let s:red          = [9  , 'Red']
-	let s:green        = [10 , 'Green']
-	let s:yellow       = [11 , 'Yellow']
-	let s:blue         = [12 , 'Blue']
-	let s:magenta      = [13 , 'Magenta']
-	let s:cyan         = [14 , 'Cyan']
+	let s:red          = 'Red'
+	let s:green        = 'Green'
+	let s:yellow       = 'Yellow'
+	let s:blue         = 'Blue'
+	let s:magenta      = 'Magenta'
+	let s:cyan         = 'Cyan'
 
-	let s:dimred       = [1  , 'DarkRed']
-	let s:dimgreen     = [2  , 'DarkGreen']
-	let s:dimyellow    = [3  , 'DarkYellow']
-	let s:dimblue      = [4  , 'DarkBlue']
-	let s:dimmagenta   = [5  , 'DarkMagenta']
-	let s:dimcyan      = [6  , 'DarkCyan']
+	let s:dimred       = 'DarkRed'
+	let s:dimgreen     = 'DarkGreen'
+	let s:dimyellow    = 'DarkYellow'
+	let s:dimblue      = 'DarkBlue'
+	let s:dimmagenta   = 'DarkMagenta'
+	let s:dimcyan      = 'DarkCyan'
 
-	let s:brightyellow = [11 , 'Yellow']
+	let s:brightyellow = 'Yellow'
 
 else
 
-	let s:red          = [1  , 'DarkRed']
-	let s:green        = [2  , 'DarkGreen']
-	let s:yellow       = [3  , 'DarkYellow']
-	let s:blue         = [4  , 'DarkBlue']
-	let s:magenta      = [5  , 'DarkMagenta']
-	let s:cyan         = [6  , 'DarkCyan']
+	let s:red          = 'DarkRed'
+	let s:green        = 'DarkGreen'
+	let s:yellow       = 'DarkYellow'
+	let s:blue         = 'DarkBlue'
+	let s:magenta      = 'DarkMagenta'
+	let s:cyan         = 'DarkCyan'
 
 	if s:gt_eight
 
-		let s:dimred       = [9  , 'Red']
-		let s:dimgreen     = [10 , 'Green']
-		let s:dimyellow    = [11 , 'Yellow']
-		let s:dimblue      = [12 , 'Blue']
-		let s:dimmagenta   = [13 , 'Magenta']
-		let s:dimcyan      = [14 , 'Cyan']
+		let s:dimred       = 'Red'
+		let s:dimgreen     = 'Green'
+		let s:dimyellow    = 'Yellow'
+		let s:dimblue      = 'Blue'
+		let s:dimmagenta   = 'Magenta'
+		let s:dimcyan      = 'Cyan'
 
-		let s:brightyellow = [11 , 'Yellow']
+		let s:brightyellow = 'Yellow'
 
 	else
 
