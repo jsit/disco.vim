@@ -160,17 +160,19 @@ endif
 
 " Use something other than red if user has asked to use red only for errors
 if exists('g:disco_red_error_only') && g:disco_red_error_only == 1
-	let s:alt_red     = s:dimcyan
-	let s:dim_alt_red = s:dimcyan
+	let s:truered = s:red
+	let s:red     = s:dimcyan
+	let s:dimred = s:dimcyan
 else
-	let s:alt_red     = s:red
-	let s:dim_alt_red = s:dimred
+	let s:truered = s:red
+	let s:red     = s:red
+	let s:dimred = s:dimred
 endif
 " }}}
 
 if exists('g:disco_color_map')
 	for [s:key, s:val] in items(g:disco_color_map)
-		execute 'let s:' . s:key . ' = ' . s:val
+		execute 'let s:' . s:key . ' = "' . s:val . '"'
 	endfor
 endif
 
@@ -203,7 +205,7 @@ call <SID>set_colors("DiffDelete"   , s:bg   , s:dimred   , "")
 call <SID>set_colors("DiffChange"   , s:bg   , s:dimcyan  , "")
 call <SID>set_colors("DiffText"     , s:bg   , s:cyan     , "NONE")
 hi link EndOfBuffer NonText
-call <SID>set_colors("ErrorMsg"     , s:fg     , s:red      , "")
+call <SID>set_colors("ErrorMsg"     , s:fg     , s:truered      , "")
 
 if s:dimtwo != s:dim " Needs to be different from SignColumn
 	call <SID>set_colors("VertSplit" , s:dimtwo , s:dimtwo , "NONE")
@@ -248,8 +250,8 @@ call <SID>set_colors("Question"         , s:green    , ""             , "")
 call <SID>set_colors("Search"           , s:brightyellow, "NONE", "reverse")
 call <SID>set_colors("SpecialKey"       , s:dim      , ""             , "")
 call <SID>set_colors("SpellBad"         , s:dimred   , s:fg           , "reverse")
-call <SID>set_colors("SpellCap"         , ""         , s:red          , "reverse")
-call <SID>set_colors("SpellLocal"       , ""         , s:red          , "reverse")
+call <SID>set_colors("SpellCap"         , ""         , s:truered          , "reverse")
+call <SID>set_colors("SpellLocal"       , ""         , s:truered          , "reverse")
 call <SID>set_colors("SpellRare"        , s:dimred   , s:fg           , "reverse")
 call <SID>set_colors("StatusLine"       , ""         , ""             , "reverse")
 call <SID>set_colors("StatusLineNC"     , s:dim      , ""             , "")
@@ -261,7 +263,7 @@ call <SID>set_colors("TabLineSel"       , ""         , ""             , "NONE")
 call <SID>set_colors("Title"            , "NONE"     , ""             , "")
 call <SID>set_colors("Visual"           , ""         , s:dim          , "")
 call <SID>set_colors("VisualNOS"        , s:dim      , ""             , "")
-call <SID>set_colors("WarningMsg"       , s:red      , "NONE"             , "")
+call <SID>set_colors("WarningMsg"       , s:truered      , "NONE"             , "")
 call <SID>set_colors("WildMenu"         , s:green    , s:dim          , "")
 
 " End Highlight Groups }}}
@@ -309,7 +311,7 @@ hi link StorageClass Type
 hi link Structure    Type
 hi link Typedef      Type
 
-call <SID>set_colors("Special", s:alt_red, "", "")
+call <SID>set_colors("Special", s:red, "", "")
 hi link SpecialChar    Special
 hi link Tag            Special
 hi link Delimiter      Special
@@ -318,7 +320,7 @@ hi link Debug          Special
 
 call <SID>set_colors("Underlined" , "NONE" , ""       , "underline")
 call <SID>set_colors("Ignore"     , s:dim  , ""       , "")
-call <SID>set_colors("Error"      , s:red  , "white"  , "reverse")
+call <SID>set_colors("Error"      , s:truered  , "White"  , "reverse")
 call <SID>set_colors("Todo"       , s:bg   , s:yellow , "")
 
 " End Group Names }}}
@@ -339,7 +341,7 @@ call <SID>set_colors("Todo"       , s:bg   , s:yellow , "")
 " call <SID>set_colors("cRepeat"       , s:magenta , "NONE" , "")
 "
 " " PHP Highlighting
-" call <SID>set_colors("phpVarSelector"    , s:alt_red , "NONE" , "")
+" call <SID>set_colors("phpVarSelector"    , s:red, "NONE" , "")
 " call <SID>set_colors("phpKeyword"        , s:magenta , "NONE" , "")
 " call <SID>set_colors("phpRepeat"         , s:magenta , "NONE" , "")
 " call <SID>set_colors("phpConditional"    , s:magenta , "NONE" , "")
