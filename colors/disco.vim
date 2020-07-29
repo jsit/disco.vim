@@ -39,7 +39,7 @@ fun! <SID>set_colors(group, fg, bg, attr)
 	endif
 
 	if !empty(a:bg)
-		if type(a:bg) == 1 " If a:bg is a string, look it up for cterm
+		if type(a:bg) == 1 && a:bg != 'NONE' " If a:bg is a string, look it up for cterm
 			exec "hi " . a:group . " guibg=" .  a:bg . " ctermbg=" . get(s:color_map, a:bg)
 		else
 			exec "hi " . a:group . " guibg=" . a:bg . " ctermbg=" . a:bg
