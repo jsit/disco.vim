@@ -268,6 +268,11 @@ call <SID>set_colors("VisualNOS"        , s:dim      , ""             , "")
 call <SID>set_colors("WarningMsg"       , s:truered      , "NONE"             , "")
 call <SID>set_colors("WildMenu"         , s:green    , s:dim          , "")
 
+call <SID>set_colors("Underlined" , ""     , ""       , "underline")
+call <SID>set_colors("Ignore"     , s:dim  , ""       , "")
+call <SID>set_colors("Error"      , s:truered  , "White"  , "reverse")
+call <SID>set_colors("Todo"       , s:yellow   , "NONE" , "reverse")
+
 " End Highlight Groups }}}
 
 
@@ -319,11 +324,6 @@ hi link Tag            Special
 hi link Delimiter      Special
 hi link SpecialComment Special
 hi link Debug          Special
-
-call <SID>set_colors("Underlined" , ""     , ""       , "underline")
-call <SID>set_colors("Ignore"     , s:dim  , ""       , "")
-call <SID>set_colors("Error"      , s:truered  , "White"  , "reverse")
-call <SID>set_colors("Todo"       , s:yellow   , "NONE" , "reverse")
 
 " End Group Names }}}
 
@@ -410,6 +410,6 @@ call <SID>set_colors("ShowMarksHLo" , s:bg , s:blue , "")
 
 " Clean up
 delf <SID>set_colors
-unlet s:dim s:dimtwo s:bg s:fg s:blue s:yellow s:red s:green s:cyan s:magenta s:brightyellow s:dimred s:dimgreen s:dimcyan
+unlet s:dim s:dimtwo s:bg s:fg s:blue s:yellow s:red s:green s:cyan s:magenta s:brightyellow s:dimred s:dimgreen s:dimcyan s:truered
 
 " ex: set noexpandtab nolist foldmethod=marker:
