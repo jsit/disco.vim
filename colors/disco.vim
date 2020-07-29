@@ -47,7 +47,7 @@ fun! <SID>set_colors(group, fg, bg, attr)
 	endif
 
 	if a:attr != ""
-		exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
+		exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr . " term=" . a:attr
 	endif
 
 endfun
