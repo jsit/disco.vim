@@ -223,18 +223,20 @@ else
 	call <SID>set_colors("SignColumn" , "NONE"   , s:dimtwo , "")
 endif
 
-call <SID>set_colors("IncSearch"  , s:brightyellow , "NONE" , "reverse")
+call <SID>set_colors("IncSearch"  , s:brightyellow , "Black" , "reverse")
 call <SID>set_colors("LineNr"     , s:dim          , ""      , "")
-call <SID>set_colors("MatchParen" , s:yellow       , "NONE"  , "")
+call <SID>set_colors("MatchParen" , ""             , "NONE"  , "underline,bold")
 call <SID>set_colors("ModeMsg"    , s:green        , ""      , "")
 call <SID>set_colors("MoreMsg"    , s:green        , ""      , "")
 call <SID>set_colors("NonText"    , s:dim          , ""      , "")
 
 if &background == "dark" && has('gui_running')
-	call <SID>set_colors("Normal" , "white" , "black" , "")
+	call <SID>set_colors("Normal" , "White" , "Black" , "")
 else
 	call <SID>set_colors("Normal" , ""      , ""      , "")
 endif
+
+call <SID>set_colors("InfoPopup", s:fg, s:dim, "")
 
 call <SID>set_colors("PMenu"        , s:fg           , s:dim          , "")
 
@@ -247,7 +249,7 @@ endif
 call <SID>set_colors("PMenuSbar"        , s:fg       , s:dim          , "")
 call <SID>set_colors("PMenuThumb"       , s:fg       , s:dim          , "")
 call <SID>set_colors("Question"         , s:green    , ""             , "")
-call <SID>set_colors("Search"           , s:brightyellow, "NONE", "reverse")
+call <SID>set_colors("Search"           , s:brightyellow, "Black", "reverse")
 call <SID>set_colors("SpecialKey"       , s:dim      , ""             , "")
 call <SID>set_colors("SpellBad"         , s:dimred   , s:fg           , "reverse")
 call <SID>set_colors("SpellCap"         , ""         , s:truered          , "reverse")
@@ -260,7 +262,7 @@ call <SID>set_colors("StatusLineTermNC" , s:dimgreen , "NONE"         , "reverse
 call <SID>set_colors("TabLine"          , s:fg       , s:dim          , "NONE")
 call <SID>set_colors("TabLineFill"      , s:dim      , s:dimtwo       , "")
 call <SID>set_colors("TabLineSel"       , ""         , ""             , "NONE")
-call <SID>set_colors("Title"            , "NONE"     , ""             , "")
+call <SID>set_colors("Title"            , s:magenta     , ""             , "")
 call <SID>set_colors("Visual"           , ""         , s:dim          , "")
 call <SID>set_colors("VisualNOS"        , s:dim      , ""             , "")
 call <SID>set_colors("WarningMsg"       , s:truered      , "NONE"             , "")
@@ -318,10 +320,10 @@ hi link Delimiter      Special
 hi link SpecialComment Special
 hi link Debug          Special
 
-call <SID>set_colors("Underlined" , "NONE" , ""       , "underline")
+call <SID>set_colors("Underlined" , ""     , ""       , "underline")
 call <SID>set_colors("Ignore"     , s:dim  , ""       , "")
 call <SID>set_colors("Error"      , s:truered  , "White"  , "reverse")
-call <SID>set_colors("Todo"       , s:bg   , s:yellow , "")
+call <SID>set_colors("Todo"       , s:yellow   , "NONE" , "reverse")
 
 " End Group Names }}}
 
