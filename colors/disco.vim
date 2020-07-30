@@ -271,7 +271,11 @@ call <SID>set_colors("WildMenu"         , s:green    , s:dim          , "")
 call <SID>set_colors("Underlined" , ""     , ""       , "underline")
 call <SID>set_colors("Ignore"     , s:dim  , ""       , "")
 call <SID>set_colors("Error"      , s:truered  , "White"  , "reverse")
-call <SID>set_colors("Todo"       , s:yellow   , "NONE" , "reverse")
+if (s:italic)
+	call <SID>set_colors("Todo"       , s:yellow   , "NONE" , "reverse,italic")
+else
+	call <SID>set_colors("Todo"       , s:yellow   , "NONE" , "reverse")
+endif
 
 " End Highlight Groups }}}
 
